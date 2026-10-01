@@ -83,7 +83,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostResponseDto> getAllByUser(Long userId) {
-        List<Post> posts = postRepository.findAllByUser(userId);
+        List<Post> posts = postRepository.findAllByUser_Id(userId);
 
         return posts.stream()
                 .map(post -> modelMapper.map(post, PostResponseDto.class))
@@ -92,7 +92,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<PostResponseDto> getAllByCategory(Long categoryId) {
-        List<Post> posts = postRepository.findAllByCategory(categoryId);
+        List<Post> posts = postRepository.findAllByCategory_Id(categoryId);
 
         return posts.stream()
                 .map(post -> modelMapper.map(post, PostResponseDto.class))
