@@ -1,0 +1,8 @@
+package in.codehidder.blognest.blognest.repository;
+
+import in.codehidder.blognest.blognest.entity.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository<Category, Long> {
+    boolean existsById(Long id);
+}
